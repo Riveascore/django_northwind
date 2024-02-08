@@ -21,7 +21,7 @@ class Categories(models.Model):
 
 class Customercustomerdemo(models.Model):
     customerid = models.ForeignKey('Customers', models.DO_NOTHING, db_column='customerid', primary_key=True)
-    customertypeid = models.ForeignKey('Customerdemographics', models.DO_NOTHING, db_column='customertypeid')
+    customertypeid = models.ForeignKey('CustomerDemographics', models.DO_NOTHING, db_column='customertypeid')
 
     class Meta:
         managed = False
@@ -29,7 +29,7 @@ class Customercustomerdemo(models.Model):
         unique_together = (('customerid', 'customertypeid'),)
 
 
-class Customerdemographics(models.Model):
+class CustomerDemographics(models.Model):
     customertypeid = models.CharField(primary_key=True, max_length=-1)
     customerdesc = models.TextField(blank=True, null=True)
 
