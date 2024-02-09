@@ -9,6 +9,7 @@ psycopg2 = "*"
 django-environ = "*"
 pandas = "*"
 sqlacodegen = "*"
+django-sorcery = "*"
 
 [dev-packages]
 
