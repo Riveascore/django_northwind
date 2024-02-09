@@ -8,6 +8,7 @@ django = "==2.0.9"
 psycopg2 = "*"
 django-environ = "*"
 pandas = "*"
+sqlacodegen = "*"
 
 [dev-packages]
 
