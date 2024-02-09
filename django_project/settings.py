@@ -31,6 +31,22 @@ INSTALLED_APPS = [
     'django_sorcery'
 ]
 
+# -------------------------
+# SQLAlchemy db connection setup
+DB_ADAPTER = 'postgresql'
+
+PGHOST = env('PGHOST')
+PGPORT = env('PGPORT')
+PGUSER = env('PGUSER')
+PGDATABASE = env('PGDATABASE')
+PGPASSWORD = env('PGPASSWORD')
+
+DB_CONNECTION_URL = f'{DB_ADAPTER}://{PGUSER}:{PGPASSWORD}@{PGHOST}:{PGPORT}/{PGDATABASE}'
+
+POOL_RECYCLE = 4 * 60 * 60
+
+# -------------------------
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
